@@ -7,4 +7,6 @@ import com.zhangxin.cms.domain.Article;
 public interface ArticleMapper {
 	//查询文章
 	List<Article> selects(Article article);
+	//文章详情
+	Article select(Integer id);
 }

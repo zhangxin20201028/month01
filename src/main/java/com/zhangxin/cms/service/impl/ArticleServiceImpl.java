@@ -24,6 +24,18 @@ public class ArticleServiceImpl implements ArticleService{
 		List<Article> list = mapper.selects(article);
 		return new PageInfo<Article>(list);
 	}
+
+	@Override
+	public Article select(Integer id) {
+		// TODO Auto-generated method stub
+		return mapper.select(id);
+	}
+
+	@Override
+	public int insert(Article article) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 
 }

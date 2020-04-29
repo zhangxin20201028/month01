@@ -26,29 +26,36 @@
 		<div class="row mt-2">
 			<div class="col-md-2 bg-light" style="height: 300px">
 				<div class="list-group">
-  					<a href="#" data="/articles" class="list-group-item list-group-item-action active">
+  					<a href="#" data="/my/articles" class="list-group-item list-group-item-action active">
     				我的文章
   					</a>
-  					<a href="#" class="list-group-item list-group-item-action">发布文章</a>
+  					<a href="#" data="/my/publish"class="list-group-item list-group-item-action">发布文章</a>
   					<a href="#" class="list-group-item list-group-item-action">我的收藏</a>
   					<a href="#" class="list-group-item list-group-item-action">我的评论</a>
  					<a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">我的设置</a>
 </div>
 			</div>
 			<div class="col-md-10" id="center">
-				
+				<div style="display:none">
+					<jsp:include page="/resource/kindeditor/jsp/demo.jsp"></jsp:include>
+				</div>				
 			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
 	$(function(){
+		
+		$("#center").load("/my/articles");
 		$("a").click(function(){
 			var url=$(this).attr("data");
+			
+			$("a").removeClass("active");
+			$(this).addClass("active");
+			
 			$("#center").load(url);
 		})
 	})
-	
 </script>
 
 </html>

@@ -10,5 +10,39 @@
   					user_id=#{userId}
   				</if>
   			</where>
+  			order by created desc
+  		</select>
+  		<resultMap type="Article" id="articleResultMap">
+  		
+  			<id column="id" property="id"/>
+  			<result column="title" property="title"/>
+  			<result column="content" property="content"/>
+  			<result column="picture" property="picture"/>
+  			<result column="channel_Id" property="channelId"/>
+  			<result column="category_Id" property="categoryId"/>
+  			<result column="user_Id" property="userId"/>
+  			<result column="hits" property="hits"/>
+  			<result column="hot" property="hot"/>
+  			<result column="status" property="status"/>
+  			<result column="deleted" property="deleted"/>
+  			<result column="created" property="created"/>
+  			<result column="updated" property="updated"/>
+  			<result column="contentType" property="contentType"/>
+  			<association property="user" javaType="User" column="user_Id" select="selectById"></association>
+  			<association property="channel" javaType="Channel" column="channel_Id" select="selectchannelById"></association>
+  			<association property="category" javaType="Category" column="category_Id" select="selectcategoryById"></association>
+  			
+  		</resultMap>
+  		<select id="select" resultMap="articleResultMap">
+  			select * from cms_article where id=#{id}
+  		</select>
+  		<select id="selectById" resultType="User">
+  			select * from cms_user where id=#{id}
+  		</select>
+  		<select id="selectchannelById" resultType="Channel">
+  			select * from cms_channel where id=#{id}
+  		</select>
+  		<select id="selectcategoryById" resultType="Category">
+  			select * from cms_category where id=#{id}
   		</select>
   </mapper>
