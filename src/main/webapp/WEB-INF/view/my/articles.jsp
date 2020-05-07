@@ -18,7 +18,7 @@
 	<div class="container">
 		<c:forEach items="${info.list}" var="s">
 			<div class="media">
-				<img src="/resource/images/a.jpg" class="mr-3 rounded" alt="..."
+				<img src="/pic/${s.picture }" class="mr-3 rounded" alt="..."
 					height="56px" width="50px">
 				<div class="media-body">
 					<h5 class="mt-0">${s.title}</h5>

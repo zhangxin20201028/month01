@@ -10,9 +10,11 @@ import com.zhangxin.cms.dao.ChannelMapper;
 import com.zhangxin.cms.domain.Category;
 import com.zhangxin.cms.domain.Channel;
 import com.zhangxin.cms.service.ChannelService;
-@Service
-public class ChannelServiceImpl implements ChannelService{
 
+
+
+@Service
+public class ChannelServiceImpl implements ChannelService {
 	@Resource
 	ChannelMapper channelMapper;
 
@@ -27,4 +29,5 @@ public class ChannelServiceImpl implements ChannelService{
 		// TODO Auto-generated method stub
 		return channelMapper.selectCategorysByChannelId(channelId);
 	}
+
 }

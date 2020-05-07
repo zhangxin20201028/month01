@@ -42,6 +42,10 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 			<label for="title"> 文章标题：</label> <input id="title"
 				class="form-control" type="text" name="title">
 		</div>
+		<div class="form-group">
+			<label for="picture"> 标题图片：</label>
+			 <input id="picture" 	class="form-control-file" type="file" name="file">
+		</div>
 		<div class="form-group form-inline">
 			<label for="channel">栏目</label> <select
 				class="form-control" id="channel" name="channelId">
